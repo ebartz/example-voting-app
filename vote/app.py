@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, make_response, g
 from redis import Redis
 import os
@@ -5,8 +6,12 @@ import socket
 import random
 import json
 
-option_a = os.getenv('OPTION_A', "Rückwärts")
-option_b = os.getenv('OPTION_B', "Vorwärts")
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+option_a = os.getenv('OPTION_A', 'Zurück')
+option_b = os.getenv('OPTION_B', 'Vor')
 hostname = socket.gethostname()
 
 app = Flask(__name__)
