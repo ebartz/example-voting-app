@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app: result
   name: result
   namespace: vote
 spec:
@@ -9,6 +11,6 @@ spec:
   - name: "result-service"
     port: 5001
     targetPort: 80
-    nodePort: 33001
+    nodePort: 31001
   selector:
     app: result
