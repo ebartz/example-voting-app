@@ -16,7 +16,12 @@ spec:
         app: db
     spec:
       containers:
-      - image: postgres:9.4.1
+      - env:
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: POSTGRES_USER
+          value: postgres
+        image: postgres:9.4.1
         name: postgres
         ports:
         - containerPort: 5432
